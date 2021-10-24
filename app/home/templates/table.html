@@ -21,17 +21,15 @@
                       <tr>
                         <th>Item</th>
                         <th>Quantity</th>
-                        <th>Unit price</th>
-                        <th>Total price/potential savings</th>
+                        <!-- <th>Money Wasted</th> -->
                       </tr>
                     </thead>
                     <tbody>
                       {% for row in table %}
                         <tr>
-                          <td>{{ row.item}}</td>
-                          <td>{{ row.quantity }}</td>
-                          <td>{{ row.unitprice }}</td>
-                          <td>{{ row.total }}</td>
+                          <td>{{ row.ingredient}}</td>
+                          <td>{{ row.qtywasted }}</td>
+                          <!-- <td> {{row.moneywasted}}</td> -->
                         </tr>
                       {% endfor %}
                     </tbody>
@@ -48,4 +46,10 @@
 {% block plugin_javascripts %}{% endblock plugin_javascripts %}
 
 <!-- Specific Page JS goes HERE  -->
-{% block javascripts %}{% endblock javascripts %}
+{% block javascripts %}
+<script>
+    $(document).ready(function(){
+        $('#data').DataTable();
+    });
+</script>
+{% endblock javascripts %}
