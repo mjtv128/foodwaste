@@ -4,6 +4,7 @@ from flask import render_template,request,url_for,redirect
 from google.cloud import bigquery
 import json
 
+def waste_table():
 client = bigquery.Client()
 demand = (
         'SELECT * FROM `food-waste-329921.Foodwaste.Demand`;'
