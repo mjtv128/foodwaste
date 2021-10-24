@@ -102,11 +102,10 @@
         </div> -->
       </div>
       <div class="row">
-        <div class="col-md-4 grid-margin stretch-card">
+        <div class="col-md-12 grid-margin stretch-card">
           <div class="card">
             <div class="card-body">
-              <h4 class="card-title">Transaction History</h4>
-              <canvas id="transaction-history" class="transaction-chart"></canvas>
+              <div id="chart" class="chart"></div>
               </div>
             </div>
           </div>
@@ -129,5 +128,9 @@
 {% block javascripts %}
 
   <script src="/static/assets/js/dashboard.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>  
+  <script type="text/javascript">  var graphs = {{graphJSON | safe}};  
+  Plotly.plot('chart',graphs,{});  
+  </script>
 
 {% endblock javascripts %}

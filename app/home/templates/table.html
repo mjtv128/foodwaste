@@ -21,6 +21,8 @@
                       <tr>
                         <th>Item</th>
                         <th>Quantity</th>
+                        <th> Money Wasted</th>
+                        <th> Percentage</th>
                         <!-- <th>Money Wasted</th> -->
                       </tr>
                     </thead>
@@ -29,7 +31,8 @@
                         <tr>
                           <td>{{ row.ingredient}}</td>
                           <td>{{ row.qtywasted }}</td>
-                          <!-- <td> {{row.moneywasted}}</td> -->
+                          <td> {{row.moneywasted}}</td>
+                          <td> {{row.percentage}}</td>
                         </tr>
                       {% endfor %}
                     </tbody>
